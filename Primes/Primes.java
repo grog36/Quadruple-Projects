@@ -1,7 +1,10 @@
+//Gregory Ecklund
+//September 2022
+
 import java.lang.Math;
-public class newPrimes {
+public class Primes {
 	public static void main(String[] args) {
-		int limit = 100000;
+		int limit = 10000;
 		boolean isPrime = true;
 		String output = "[";
 

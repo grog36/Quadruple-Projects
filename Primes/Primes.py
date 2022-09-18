@@ -1,14 +1,20 @@
-num = 100
-test = True
+#Gregory Ecklund
+#September 2022
+
+import math as Math
+
+max_num = 10000
+isPrime = True
 
 list_of_primes = []
 
-for i in range(num, 1, -1):
-    for j in range(2, i, 1):
+for i in range(max_num, 1, -1):
+    for j in range(2, Math.floor(Math.sqrt(i)+1), 1):
         if (i % j == 0):
-            test = False
-    if (test == True):
+            isPrime = False
+    if (isPrime):
         list_of_primes.append(i)
-    test = True
+    else:
+        isPrime = True
 
 print(list_of_primes)

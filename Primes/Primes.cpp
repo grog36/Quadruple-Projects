@@ -1,5 +1,9 @@
+//Gregory Ecklund
+//September2022
+
 #include <iostream>
 #include <string>
+#include <cmath>
 using namespace std;
 
 string toString(int listOfPrimes [], int numOfIndexes) {
@@ -16,13 +20,13 @@ string toString(int listOfPrimes [], int numOfIndexes) {
 
 
 int main() {
-    int num = 100;
+    int num = 10000;
     int currentIndex = 0;
     bool test = true;
     int listOfPrimes [num];
 
     for (int i = num; i > 1; i--) {
-        for (int j = 2; j < i; j++) {
+        for (int j = 2; j < floor(sqrt(i) + 1); j++) {
             if (i % j == 0) {
                 test = false;
             }
@@ -34,5 +38,5 @@ int main() {
         test = true;
     }
 
-    std::cout << toString(listOfPrimes, currentIndex);
+    std::cout << toString(listOfPrimes, currentIndex) << std::endl;
 }

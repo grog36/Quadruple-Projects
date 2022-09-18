@@ -1,18 +1,22 @@
-let n = 100
-let test = true
+//Gregory Ecklund
+//September 2022
 
-var listOfPrimes = []
+let maxNum = 10000;
+let isPrime = true;
+let listOfPrimes = [];
 
-for (i=n; i>=2; i--) {
-    for(t=2; t<i; t++) {
-        if(i%t==0) {
-            test = false
-        }
-    }
-    if(test == true) {
-        listOfPrimes.push(i)
-    }
-    test = true
+for(let i=maxNum; i>=2; i--) {
+	for (let t=2; t<(Math.floor(Math.sqrt(i) + 1)); t++) {
+		if (i%t===0) {
+			isPrime = false;
+		}
+	}
+	if (isPrime) {
+		listOfPrimes.push(i);
+	}
+	else {
+		isPrime = true;
+	}
 }
 
-console.log(listOfPrimes)
+console.log(listOfPrimes);
