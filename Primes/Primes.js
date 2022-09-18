@@ -1,7 +1,7 @@
 //Gregory Ecklund
 //September 2022
 
-let maxNum = 10000;
+let maxNum = 10000; //Changeable upper-limit
 let isPrime = true;
 let listOfPrimes = [];
 

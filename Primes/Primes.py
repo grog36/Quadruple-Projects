@@ -3,7 +3,7 @@
 
 import math as Math
 
-max_num = 10000
+max_num = 10000 #Changeable upper-limit
 isPrime = True
 
 list_of_primes = []

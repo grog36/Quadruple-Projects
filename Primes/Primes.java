@@ -4,7 +4,7 @@
 import java.lang.Math;
 public class Primes {
 	public static void main(String[] args) {
-		int limit = 10000;
+		int limit = 10000; // Changeable upper-limit
 		boolean isPrime = true;
 		String output = "[";
 

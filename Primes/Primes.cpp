@@ -20,7 +20,7 @@ string toString(int listOfPrimes [], int numOfIndexes) {
 
 
 int main() {
-    int num = 10000;
+    int num = 10000; //Changeable upper-limit
     int currentIndex = 0;
     bool test = true;
     int listOfPrimes [num];
