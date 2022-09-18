@@ -1,9 +1,12 @@
+//Gregory Ecklund
+//September 2022
+
 public class cc {
     public static void main(String[] args) {
-        String text = "A friend in need is a friend indeed";
+        String text = "You can make this say whatever you want."; //Text to encrypt/decrypt
+        int rotationInteger = 25; //Amount to rotate cipher by (positive or negative)
         char[] newArray = new char[text.length()];
         newArray = text.toCharArray();
-        int rotationInteger = 20;
         String output = "";
         int newIndex = 0;
 
@@ -16,13 +19,8 @@ public class cc {
             for (int i = 0; i < lowercaseAlphabet.length; i++) {
                 if (newArray[letter] == lowercaseAlphabet[i]) {
                     newIndex = i + rotationInteger;
-                    if (newIndex > 26) {
-                        if (newIndex % 26 == 0) {
-                            newIndex = 26;
-                        }
-                        else {
-                            newIndex %= 26;
-                        }
+                    if (newIndex > 25) {
+                        newIndex %= 26;
                     }
                     output += lowercaseAlphabet[newIndex];
                 }
@@ -30,13 +28,8 @@ public class cc {
             for (int j = 0; j < uppercaseAlphabet.length; j++) {
                 if (newArray[letter] == uppercaseAlphabet[j]) {
                     newIndex = j + rotationInteger;
-                    if (newIndex > 26) {
-                        if (newIndex % 26 == 0) {
-                            newIndex = 26;
-                        }
-                        else {
-                            newIndex %= 26;
-                        }
+                    if (newIndex > 25) {
+                        newIndex %= 26;
                     }
                     output += uppercaseAlphabet[newIndex];
                 }
