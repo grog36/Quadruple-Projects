@@ -1,5 +1,5 @@
 //Gregory Ecklund
-//September2022
+//April 2023
 
 #include <iostream>
 #include <string>
@@ -22,21 +22,24 @@ string toString(int listOfPrimes [], int numOfIndexes) {
 int main() {
     int num = 10000; //Changeable upper-limit
     int currentIndex = 0;
-    bool test = true;
+    bool isPrime = true;
     int listOfPrimes [num];
 
     for (int i = num; i > 1; i--) {
         for (int j = 2; j < floor(sqrt(i) + 1); j++) {
             if (i % j == 0) {
-                test = false;
+                isPrime = false;
             }
         }
-        if (test == true) {
+        if (isPrime) {
             listOfPrimes[currentIndex] = i;
             currentIndex++;
         }
-        test = true;
+        else {
+        isPrime = true;
+        }
     }
 
     std::cout << toString(listOfPrimes, currentIndex) << std::endl;
+    return 0;
 }
