@@ -2,22 +2,8 @@
 //April 2023
 
 #include <iostream>
-#include <string>
 #include <cmath>
 using namespace std;
-
-string toString(int listOfPrimes [], int numOfIndexes) {
-    string output = "[";
-    for (int i = 0; i < numOfIndexes; i++) {
-        output += to_string(listOfPrimes[i]);
-        if (i != (numOfIndexes - 1)) {
-            output += ", ";
-        }
-    }
-    output += "]\n";
-    return output;
-}
-
 
 int main() {
     int num = 10000; //Changeable upper-limit
@@ -36,10 +22,18 @@ int main() {
             currentIndex++;
         }
         else {
-        isPrime = true;
+            isPrime = true;
         }
     }
 
-    std::cout << toString(listOfPrimes, currentIndex) << std::endl;
+    //Print primes
+    std::cout << "[";
+    for (int i = 0; i < currentIndex; i++) {
+        std::cout << listOfPrimes[i];
+        if (i != (currentIndex - 1)) {
+            std::cout << ", ";
+        }
+    }
+    std::cout << "]\n";
     return 0;
 }
