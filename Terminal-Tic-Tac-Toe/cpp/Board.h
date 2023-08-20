@@ -16,13 +16,22 @@ class Board {
         }
 
     public:
-        Board() {
+        Board(int whoGoesFirst) {
             for (int i = 0; i < 3; i++) {
                 std::vector<char> row;
                 for (int j = 0; j < 3; j++) {
                     row.push_back(' ');
                 }
                 grid.push_back(row);
+            }
+            if (whoGoesFirst == 1) {
+                whoseTurn = 'X';
+            }
+            else if (whoGoesFirst == 2) {
+                whoseTurn = 'O';
+            }
+            else {
+                throw std::invalid_argument("whoGoesFirst argument must be 1 or 2");
             }
         }
 
@@ -99,7 +108,7 @@ class Board {
         }
 
         bool checkForTie() {
-            if (checkForWin(player1Marker) == true && checkForWin(player2Marker) == true && emptySpaces.size() == 0) {
+            if (checkForWin(player1Marker) == false && checkForWin(player2Marker) == false && emptySpaces.size() == 0) {
                 return true;
             }
             return false;
