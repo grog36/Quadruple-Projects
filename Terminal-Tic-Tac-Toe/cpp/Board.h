@@ -141,9 +141,8 @@ class Board {
             output = output + "\nTie: " + boolToString(checkForTie());
             output = output + "\nRemaining Moves: [";
             for (int i = 0; i < emptySpaces.size(); i++) {
-                Coordinate e = emptySpaces.at(i);
-                output = output + "{Row:" + std::to_string(e.getRowIndex()) + ",Col:";
-                output = output + std::to_string(e.getColumnIndex()) + "}";
+                Coordinate c = emptySpaces.at(i);
+                output += c.toString();
                 if (i != emptySpaces.size() - 1) {
                     output += ", ";
                 }

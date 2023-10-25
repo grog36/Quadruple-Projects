@@ -7,8 +7,8 @@ class Game {
 
         //Asks for user input to play a move
         void requestCoordinate() {
-            std::cout << board.toString() << std::endl;
-            std::cout << "Player - '" << board.getWhoseTurn() << "'s turn." << std::endl;
+            std::cout << board.toString() << "\n";
+            std::cout << "Player - '" << board.getWhoseTurn() << "'s turn\n.";
             std::cout << "\nPlease enter the row you would like to place a marker (0-2): ";
             int rowNum = 3;
             std::cin >> rowNum;
@@ -26,7 +26,6 @@ class Game {
                 std::cout << "\n\n\nNot a valid move. Please try again.\n\n\n";
                 requestCoordinate();
             }
-            
         }
     
     public:
@@ -77,11 +76,11 @@ class Game {
         void start() {
             if (playerCount == 1) {
                 //Lets the user play against the bot.
-                std::cout << "Starting a game against the bot." << std::endl;
+                std::cout << "Starting a game against the bot.\n";
             }
             else if (playerCount == 2) {
                 //Lets the user play against someone else via command-line.
-                std::cout << "Starting a game against another player." << std::endl;
+                std::cout << "Starting a game against another player.\n";
                 for (int i = 0; i < 9; i++) {
                     requestCoordinate();
                     if (board.checkForWin(board.getPlayer1Marker())) {

@@ -20,10 +20,11 @@ class Coordinate {
             return rowIndex;
         }
         std::string toString() {
-            std::string output = "Row: ";
+            std::string output = "{Row: ";
             output += std::to_string(rowIndex);
-            output += "\tCol: ";
+            output += ",Col: ";
             output += std::to_string(columnIndex);
+            output += "}";
             return output;
         }
 };
